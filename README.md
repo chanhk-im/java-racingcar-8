@@ -64,10 +64,10 @@
   - 참여 `Car`의 `ArrayList`
   - 시도 횟수
 
-- `RacingWinners`(VO)
+- `RacingWinners`(DTO)
   - `Service`->`Controller`로 전달하는 객체
   - 우승자 `ArrayList`
 
-- `RacingWinnersToUserView`(VO)
+- `RacingWinnersToUserView`(DTO)
   - `Controller`->`UserView`로 전달하는 객체
   - 우승자 `ArrayList`
