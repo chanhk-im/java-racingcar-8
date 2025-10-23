@@ -74,3 +74,9 @@
 - `RacingWinnersToUserView`(DTO)
   - `Controller`->`UserView`로 전달하는 객체
   - 우승자 `ArrayList`
+
+## 추가 사항
+> 구현 과정에서 설계와 달라진 부분을 기록했습니다.
+
+- Car
+  - `position` 최대값(int max)에서 `move`가 호출되면 `ArithmeticException` 에러 발생
