@@ -22,7 +22,7 @@ public class CarTest {
     @DisplayName("move() 메서드 최대 치 초과되면 ArithmeticException 에러가 발생해야 한다.")
     void carMoveArithmeticException() {
         String name = "test";
-        Car car = Car.of(name);
+        Car car = Car.of(name, Integer.MAX_VALUE);
 
         Assertions.assertThrows(ArithmeticException.class, () -> {
             car.move();
