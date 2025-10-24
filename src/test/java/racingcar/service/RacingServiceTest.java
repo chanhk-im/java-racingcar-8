@@ -41,8 +41,10 @@ public class RacingServiceTest {
         List<Car> cars = List.of();
 
         Integer raceCount = 5;
+        RacingInformation racingInformation = RacingInformation.of(cars, raceCount);
+
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            RacingInformation racingInformation = RacingInformation.of(cars, raceCount);
+            racingService.race(racingInformation);
         });
     }
 }
