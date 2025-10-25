@@ -43,4 +43,25 @@ public class CarUtilTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("carListFromStringArray는 name array를 car의 List로 변환해야 한다.")
+    void carListFromStringArray() {
+        String[] carNames = {"A", "B", "C"};
+
+        List<Car> cars = CarUtil.carListFromStringArray(carNames);
+
+        boolean hasAllNames = true;
+        int index = 0;
+        for (Car car : cars) {
+            if (!car.getName().equals(carNames[index])) {
+                hasAllNames = false;
+                break;
+            }
+            
+            index++;
+        }
+
+        Assertions.assertTrue(hasAllNames);
+    }
 }

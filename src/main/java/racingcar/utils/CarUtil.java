@@ -1,5 +1,6 @@
 package racingcar.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 import racingcar.consts.RacingConstants;
@@ -29,5 +30,14 @@ public class CarUtil {
         }
 
         return joiner.toString();
+    }
+
+    public static List<Car> carListFromStringArray(String[] names) {
+        List<Car> cars = new ArrayList<>();
+        for (String name : names) {
+            cars.add(Car.of(name));
+        }
+
+        return cars;
     }
 }
