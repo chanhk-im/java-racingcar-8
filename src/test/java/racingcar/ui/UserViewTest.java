@@ -34,6 +34,13 @@ public class UserViewTest {
     }
 
     @Test
+    @DisplayName("User view showRaceResultMessage 매서드 테스트")
+    void showRaceResultMessage() {
+        UserView.showRaceResultMessage();
+        Assertions.assertEquals(RacingConstants.USER_VIEW_RESULT_HEADER_MESSAGE, outputStream.toString().trim());
+    }
+
+    @Test
     @DisplayName("User view showRaceResult 매서드 테스트")
     void showRaceResult() {
         Car carA = Car.of("A", 3);
@@ -41,13 +48,14 @@ public class UserViewTest {
         Car carC = Car.of("C", 1);
         List<Car> cars = List.of(carA, carB, carC);
 
-        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
-                + "\nA : ---\n"
-                + "B : ---\n"
-                + "C : -";
+        String expected = """
+                A : ---
+                B : ---
+                C : -""";
 
         UserView.showRaceResult(cars);
-        Assertions.assertEquals(expected, outputStream.toString().trim());
+        Assertions.assertEquals(expected.replaceAll("\\R", "\n"),
+                outputStream.toString().trim().replaceAll("\\R", "\n"));
     }
 
     @Test
@@ -55,34 +63,12 @@ public class UserViewTest {
     void showWinners() {
         Car carA = Car.of("A", 3);
         Car carB = Car.of("B", 3);
-        Car carC = Car.of("C", 1);
-        List<Car> cars = List.of(carA, carB, carC);
-
-//        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
-//                + "\npobi : -\n"
-//                + "woni : \n"
-//                + "jun : -\n"
-//                + "\n"
-//                + "pobi : --\n"
-//                + "woni : -\n"
-//                + "jun : --\n"
-//                + "\n"
-//                + "pobi : ---\n"
-//                + "woni : --\n"
-//                + "jun : ---\n"
-//                + "\n"
-//                + "pobi : ----\n"
-//                + "woni : ---\n"
-//                + "jun : ----\n"
-//                + "\n"
-//                + "pobi : -----\n"
-//                + "woni : ----\n"
-//                + "jun : -----\n"
-//                + "\n";
+        List<Car> cars = List.of(carA, carB);
 
         String expected = RacingConstants.USER_VIEW_WINNERS_MESSAGE + "A, B";
 
         UserView.showWinners(cars);
-        Assertions.assertEquals(expected, outputStream.toString().trim());
+        Assertions.assertEquals(expected.replaceAll("\\R", "\n"),
+                outputStream.toString().trim().replaceAll("\\R", "\n"));
     }
 }
