@@ -1,5 +1,6 @@
 package racingcar.utils;
 
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -49,7 +50,7 @@ public class CarUtilTest {
     void carListFromStringArray() {
         String[] carNames = {"A", "B", "C"};
 
-        List<Car> cars = CarUtil.carListFromStringArray(carNames);
+        List<Car> cars = CarUtil.carListFromStringArray(Arrays.stream(carNames).toList());
 
         boolean hasAllNames = true;
         int index = 0;
@@ -58,7 +59,7 @@ public class CarUtilTest {
                 hasAllNames = false;
                 break;
             }
-            
+
             index++;
         }
 

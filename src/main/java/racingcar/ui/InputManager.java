@@ -12,7 +12,7 @@ public class InputManager {
 
     public static List<String> getInputCarNames() {
         String input = Console.readLine();
-        Console.close();
+//        Console.close();
 
         return parseInputCarNames(input);
     }

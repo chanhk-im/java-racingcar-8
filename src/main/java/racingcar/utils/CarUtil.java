@@ -32,7 +32,7 @@ public class CarUtil {
         return joiner.toString();
     }
 
-    public static List<Car> carListFromStringArray(String[] names) {
+    public static List<Car> carListFromStringArray(List<String> names) {
         List<Car> cars = new ArrayList<>();
         for (String name : names) {
             cars.add(Car.of(name));

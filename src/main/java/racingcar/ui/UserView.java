@@ -31,5 +31,6 @@ public class UserView {
         for (Car car : cars) {
             System.out.println(CarUtil.carInfoString(car));
         }
+        System.out.println();
     }
 }
