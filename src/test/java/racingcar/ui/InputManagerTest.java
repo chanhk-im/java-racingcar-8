@@ -34,9 +34,7 @@ public class InputManagerTest {
         String input = "pobi,woni, junjun";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            InputManager.getInputCarNames();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputCarNames);
     }
 
     @Test
@@ -45,14 +43,12 @@ public class InputManagerTest {
         String input = "pobi,woni, junjun@";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            InputManager.getInputCarNames();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputCarNames);
     }
 
     @Test
     @DisplayName("getInputCarNames 입력받은 이름의 개수가 50개 초과되면 IllegalArgumentException이 발생해야 한다.")
-    void getInputCarNamesLongNameException() {
+    void getInputCarNamesTooManyCarsException() {
         StringJoiner inputJoiner = new StringJoiner(",");
 
         for (int i = 0; i < 50; i++) {
@@ -62,8 +58,6 @@ public class InputManagerTest {
 
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            InputManager.getInputCarNames();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputCarNames);
     }
 }
