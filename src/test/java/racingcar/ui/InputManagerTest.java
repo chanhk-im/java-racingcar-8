@@ -91,4 +91,13 @@ public class InputManagerTest {
 
         Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputRaceCount);
     }
+
+    @Test
+    @DisplayName("getInputRaceCount 입력받은 값이 숫자가 아니라면 IllegalArgumentException이 발생해야 한다.")
+    void getInputRaceCountNaNException() {
+        String input = "abc";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputRaceCount);
+    }
 }
