@@ -34,6 +34,23 @@ public class UserViewTest {
     }
 
     @Test
+    @DisplayName("User view showRaceResult 매서드 테스트")
+    void showRaceResult() {
+        Car carA = Car.of("A", 3);
+        Car carB = Car.of("B", 3);
+        Car carC = Car.of("C", 1);
+        List<Car> cars = List.of(carA, carB, carC);
+
+        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
+                + "\nA : ---\n"
+                + "B : ---\n"
+                + "C : -";
+
+        UserView.showRaceResult(cars);
+        Assertions.assertEquals(expected, outputStream.toString().trim());
+    }
+
+    @Test
     @DisplayName("User view showWinners 매서드 테스트")
     void showWinners() {
         Car carA = Car.of("A", 3);
