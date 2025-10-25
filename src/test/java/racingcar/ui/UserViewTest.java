@@ -20,10 +20,17 @@ public class UserViewTest {
     }
 
     @Test
-    @DisplayName("User view showInputMessage 매서드 테스트")
-    void showInputMessage() {
-        UserView.showInputMessage();
-        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_MESSAGE, outputStream.toString());
+    @DisplayName("User view showInputCarNameMessage 매서드 테스트")
+    void showInputCarNameMessage() {
+        UserView.showInputCarNameMessage();
+        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE, outputStream.toString().trim());
+    }
+
+    @Test
+    @DisplayName("User view showInputRaceCountMessage 매서드 테스트")
+    void showInputRaceCountMessage() {
+        UserView.showInputRaceCountMessage();
+        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_RACE_COUNT_MESSAGE, outputStream.toString().trim());
     }
 
     @Test
@@ -34,7 +41,7 @@ public class UserViewTest {
         Car carC = Car.of("C", 1);
         List<Car> cars = List.of(carA, carB, carC);
 
-        String expected = RacingConstants.USER_VIEW_INPUT_MESSAGE
+        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
                 + "\npobi : -\n"
                 + "woni : \n"
                 + "jun : -\n"
@@ -59,6 +66,6 @@ public class UserViewTest {
                 + "pobi, jun";
 
         UserView.showWinners(cars);
-        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_MESSAGE, outputStream.toString());
+        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE, outputStream.toString().trim());
     }
 }
