@@ -37,35 +37,35 @@ public class UserViewTest {
     @DisplayName("User view showWinners 매서드 테스트")
     void showWinners() {
         Car carA = Car.of("A", 3);
-        Car carB = Car.of("B", 2);
+        Car carB = Car.of("B", 3);
         Car carC = Car.of("C", 1);
         List<Car> cars = List.of(carA, carB, carC);
 
-        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
-                + "\npobi : -\n"
-                + "woni : \n"
-                + "jun : -\n"
-                + "\n"
-                + "pobi : --\n"
-                + "woni : -\n"
-                + "jun : --\n"
-                + "\n"
-                + "pobi : ---\n"
-                + "woni : --\n"
-                + "jun : ---\n"
-                + "\n"
-                + "pobi : ----\n"
-                + "woni : ---\n"
-                + "jun : ----\n"
-                + "\n"
-                + "pobi : -----\n"
-                + "woni : ----\n"
-                + "jun : -----\n"
-                + "\n"
-                + RacingConstants.USER_VIEW_WINNERS_MESSAGE
-                + "pobi, jun";
+//        String expected = RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE
+//                + "\npobi : -\n"
+//                + "woni : \n"
+//                + "jun : -\n"
+//                + "\n"
+//                + "pobi : --\n"
+//                + "woni : -\n"
+//                + "jun : --\n"
+//                + "\n"
+//                + "pobi : ---\n"
+//                + "woni : --\n"
+//                + "jun : ---\n"
+//                + "\n"
+//                + "pobi : ----\n"
+//                + "woni : ---\n"
+//                + "jun : ----\n"
+//                + "\n"
+//                + "pobi : -----\n"
+//                + "woni : ----\n"
+//                + "jun : -----\n"
+//                + "\n";
+
+        String expected = RacingConstants.USER_VIEW_WINNERS_MESSAGE + "A, B";
 
         UserView.showWinners(cars);
-        Assertions.assertEquals(RacingConstants.USER_VIEW_INPUT_CAR_NAME_MESSAGE, outputStream.toString().trim());
+        Assertions.assertEquals(expected, outputStream.toString().trim());
     }
 }
