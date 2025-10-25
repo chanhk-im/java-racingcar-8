@@ -60,4 +60,35 @@ public class InputManagerTest {
 
         Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputCarNames);
     }
+
+    @Test
+    @DisplayName("getInputRaceCount 입력받은 숫자를 반환해야 한다.")
+    void getInputRaceCountSuccessful() {
+        String input = "5";
+
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        int expected = 5;
+        int actual = InputManager.getInputRaceCount();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("getInputRaceCount 입력받은 숫자가 음수면 IllegalArgumentException이 발생해야 한다.")
+    void getInputRaceCountNegativeNumberException() {
+        String input = "-3";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputRaceCount);
+    }
+
+    @Test
+    @DisplayName("getInputRaceCount 입력받은 숫자가 100 초과되면 IllegalArgumentException이 발생해야 한다.")
+    void getInputRaceCountTooLargeNumberException() {
+        String input = "101";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        Assertions.assertThrows(IllegalArgumentException.class, InputManager::getInputRaceCount);
+    }
 }
