@@ -51,7 +51,7 @@ public class InputManagerTest {
     void getInputCarNamesTooManyCarsException() {
         StringJoiner inputJoiner = new StringJoiner(",");
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 55; i++) {
             inputJoiner.add("test");
         }
         String input = inputJoiner.toString();
