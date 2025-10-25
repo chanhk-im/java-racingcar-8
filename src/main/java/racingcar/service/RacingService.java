@@ -7,6 +7,7 @@ import racingcar.domain.Car;
 import racingcar.dto.RacingInformation;
 import racingcar.dto.RacingWinners;
 import racingcar.message.ExceptionMessage;
+import racingcar.ui.UserView;
 
 public class RacingService {
     public RacingWinners race(RacingInformation racingInformation) {
@@ -16,6 +17,8 @@ public class RacingService {
         if (cars.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessage.RACING_SERVICE_NO_CARS);
         }
+
+        UserView.showRaceResultMessage();
 
         for (int currentCount = 0; currentCount < raceCount; currentCount++) {
             raceEachTurn(cars, raceCount);
@@ -28,6 +31,8 @@ public class RacingService {
         for (Car car : cars) {
             raceEachCar(car);
         }
+
+        UserView.showRaceResult(cars);
     }
 
     public void raceEachCar(Car car) {
