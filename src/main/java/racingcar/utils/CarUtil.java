@@ -2,10 +2,23 @@ package racingcar.utils;
 
 import java.util.List;
 import java.util.StringJoiner;
+import racingcar.consts.RacingConstants;
 import racingcar.domain.Car;
 
-public class CarListUtil {
-    private CarListUtil() {
+public class CarUtil {
+    private CarUtil() {
+    }
+
+    public static String carInfoString(Car car) {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(car.getName());
+        builder.append(" : ");
+        for (int count = 0; count < car.getPosition(); count++) {
+            builder.append(RacingConstants.USER_VIEW_CAR_POSITION_CELL);
+        }
+
+        return builder.toString();
     }
 
     public static String carListToString(List<Car> cars) {
