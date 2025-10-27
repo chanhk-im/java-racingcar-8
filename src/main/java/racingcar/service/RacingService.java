@@ -15,7 +15,7 @@ public class RacingService {
         List<Car> cars = racingInformation.getCars();
 
         if (cars.isEmpty()) {
-            throw new IllegalArgumentException(ExceptionMessage.RACING_SERVICE_NO_CARS);
+            throw new IllegalArgumentException(ExceptionMessage.RACING_SERVICE_NO_CARS.getMessage());
         }
 
         UserView.showRaceResultMessage();

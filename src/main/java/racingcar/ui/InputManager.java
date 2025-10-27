@@ -37,19 +37,19 @@ public class InputManager {
 
     private static void checkTooManyNames(String[] names) {
         if (names.length > RacingConstants.MAX_CARS_COUNT) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_MANY_NAMES);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_MANY_NAMES.getMessage());
         }
     }
 
     private static void checkTooLongName(String name) {
         if (name.length() > RacingConstants.MAX_CAR_NAME_LENGTH) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_LONG_NAME);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_LONG_NAME.getMessage());
         }
     }
 
     private static void checkWrongCharInName(String name) {
         if (!name.matches("^[a-zA-Z0-9]*$")) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_WRONG_CHARACTER);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_WRONG_CHARACTER.getMessage());
         }
     }
 
@@ -68,19 +68,19 @@ public class InputManager {
 
     private static void checkRaceCountNaN(String input) {
         if (!input.matches("^[0-9]*$")) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_NOT_A_NUMBER);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_NOT_A_NUMBER.getMessage());
         }
     }
 
     private static void checkRaceCountNegative(int raceCount) {
         if (raceCount < 0) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_NEGATIVE);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_NEGATIVE.getMessage());
         }
     }
 
     private static void checkRaceCountTooLarge(int raceCount) {
         if (raceCount > RacingConstants.MAX_RACE_COUNT) {
-            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_LARGE_NUMBER);
+            throw new IllegalArgumentException(ExceptionMessage.INPUT_TOO_LARGE_NUMBER.getMessage());
         }
     }
 }

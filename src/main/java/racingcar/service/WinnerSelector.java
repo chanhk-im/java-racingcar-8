@@ -6,11 +6,12 @@ import racingcar.domain.Car;
 import racingcar.message.ExceptionMessage;
 
 public class WinnerSelector {
-    private WinnerSelector() {}
+    private WinnerSelector() {
+    }
 
     public static List<Car> selectWinner(List<Car> cars) {
         if (cars.isEmpty()) {
-            throw new IllegalArgumentException(ExceptionMessage.WINNER_SELECTOR_NO_CARS);
+            throw new IllegalArgumentException(ExceptionMessage.WINNER_SELECTOR_NO_CARS.getMessage());
         }
 
         int maxPosition = 0;

@@ -29,7 +29,7 @@ public class Car {
 
     public void move() {
         if (position >= Integer.MAX_VALUE) {
-            throw new ArithmeticException(ExceptionMessage.CAR_MOVE_OVERFLOW_MESSAGE);
+            throw new ArithmeticException(ExceptionMessage.CAR_MOVE_OVERFLOW_MESSAGE.getMessage());
         }
         position++;
     }
