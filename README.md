@@ -51,7 +51,7 @@
     - `RANDOM_NUMBER_MAX`(최대 랜덤값 = 9)
     - `MOVEMENT_THRESHOLD`(이동하는 기준 = 4)
 
--`RacingService`
+- `RacingService`
 
 - 랜덤 값 받아오기
 - 조건 체크(4 이상인지)
